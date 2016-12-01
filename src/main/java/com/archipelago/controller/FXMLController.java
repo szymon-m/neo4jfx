@@ -1,4 +1,4 @@
-package com.archipelago.fx;
+package com.archipelago.controller;
 
 
 import javafx.fxml.Initializable;

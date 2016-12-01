@@ -1,28 +1,26 @@
 package com.archipelago;
 
 
-import com.archipelago.entities.Person;
-import org.junit.AfterClass;
+import com.archipelago.model.Person;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.neo4j.ogm.session.Session;
 
 import java.util.Collections;
-import java.util.Map;
 
-import static com.archipelago.neo4jsetup.Neo4jSetup.*;
+import static com.archipelago.utils.Neo4jUtils.*;
 
 /**
- * Created by szymon on 24.11.16.
+ * Created by szymon-m on 24.11.16.
  */
-public class TestServerTest {
+public class ModelPersonTest {
 
     private static Session session;
 
     @BeforeClass
     public static void setupTestServer() {
 
-          session = getHttpNeo4j();
+          session = getEmbeddedNeo4j();
 
 //        String pathToDB = new File(".").getAbsolutePath();
 //        String actualPath = pathToDB.substring(0,pathToDB.length()-1)+"neo4jfx.db/";
@@ -44,7 +42,7 @@ public class TestServerTest {
     @Test
     public void shouldPersistPerson() {
 
-        Person pr1 = new Person("Szymon");
+        Person pr1 = new Person("Someone");
 
         session.save(pr1);
 

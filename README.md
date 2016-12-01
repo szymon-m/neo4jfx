@@ -1,3 +1,3 @@
 # neo4jfx
 
-Basic repository for neo4j projects using OGM.
+Basic repository for neo4j projects.

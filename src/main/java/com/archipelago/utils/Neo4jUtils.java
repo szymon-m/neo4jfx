@@ -1,8 +1,6 @@
-package com.archipelago.neo4jsetup;
+package com.archipelago.utils;
 
-import org.neo4j.ogm.authentication.Credentials;
 import org.neo4j.ogm.config.Configuration;
-import org.neo4j.ogm.config.DriverConfiguration;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 
@@ -11,7 +9,7 @@ import java.io.File;
 /**
  * Created by szymon on 23.11.16.
  */
-public class Neo4jSetup {
+public class Neo4jUtils {
 
     public static Session getEmbeddedNeo4j() {
 
@@ -27,7 +25,7 @@ public class Neo4jSetup {
                 .setDriverClassName("org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver")
                 .setURI(uri);
 
-        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.entities");
+        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.model");
         Session session = factory.openSession();
 
         return session;
@@ -46,7 +44,7 @@ public class Neo4jSetup {
                 .setTrustStrategy("TRUST_ON_FIRST_USE")
                 .setTrustCertFile("/tmp/cert");
 
-        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.entities");
+        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.model");
         Session session = factory.openSession();
 
 
@@ -66,7 +64,7 @@ public class Neo4jSetup {
 
 
 
-        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.entities");
+        final SessionFactory factory = new SessionFactory(configuration, "com.archipelago.model");
         Session session = factory.openSession();
 
 

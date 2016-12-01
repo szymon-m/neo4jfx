@@ -21,21 +21,6 @@ public class ModelPersonTest {
     public static void setupTestServer() {
 
           session = getEmbeddedNeo4j();
-
-//        String pathToDB = new File(".").getAbsolutePath();
-//        String actualPath = pathToDB.substring(0,pathToDB.length()-1)+"neo4jfx.db/";
-//        System.out.println(actualPath);
-//        String uri = "file://" + actualPath;
-//
-//        Configuration configuration = new Configuration();
-//
-//        configuration
-//                .driverConfiguration()
-//                .setDriverClassName("org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver")
-//                .setURI(uri);
-//
-//        DriverConfiguration config = new DriverConfiguration(configuration);
-
     }
 
 

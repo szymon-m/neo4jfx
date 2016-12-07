@@ -14,13 +14,12 @@ import java.util.Set;
 @NodeEntity
 public class Department {
 
-    @GraphId
     private Long id;
 
     private String deptName;
 
-    @Relationship(type = "EMPLOYED_BY", direction = Relationship.INCOMING)
-    Set<Person> employees;
+    @Relationship(type = "EMPLOYS")
+    Set<Person> employees = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -46,8 +45,13 @@ public class Department {
         this.employees = employees;
     }
 
+    public void addEmployee(Person person) {
+
+        this.employees.add(person);
+    }
+
     public Department() {
-        this.employees = new HashSet<>();
+//        this.employees = new HashSet<>();
 
     }
 
